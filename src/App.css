@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+  --select-text: #010D0F;
+  --arrow-background: #588D9C;
+  --select: #73B1C1;
+  --detail-text: #F1D18A;
+  --sunrise: #F1DB14;
+  --sunset: #F1570F;
+}
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+main {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to right bottom,
+    #010D0F,
+    #1F3236,
+    #395960,
+    #55848F,
+    #73B1C1
+  );
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 100px 0 0 40px;
+}
+.no-data {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.no-data h1 {
+  font-size: 2.3rem;
+  color: var(--select-text);
+}
+.select-container {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: auto;
+}
+.custom-select {
+  position: relative;
+}
+select {
+  width: 100%;
+  height: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 5px;
+  margin-bottom: 15px;
+  background-color: var(--select);
+  color: var(--select-text);
+  border: none;
+  outline: none;
+}
+.custom-arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background-color: var(--arrow-background);
+  height: 40px;
+  width: 3rem;
+  pointer-events: none;
+}
+.custom-arrow::before,
+.custom-arrow::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 40%;
+  left: 30%;
+}
+.custom-arrow::before {
+  border-left: 0.8em solid transparent;
+  border-right: 0.8em solid transparent;
+  border-top: 0.8em solid var(--select-text);
+}
+.details-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+}
+.main-details {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  margin: 15px;
+}
+.main-details,
+.description,
+.country,
+.state,
+.city {
+  color: var(--detail-text);
+  padding-right: 10px;
+}
+.main-details,
+.country,
+.state,
+.city {
+  padding-left: 20px;
+}
+.main-details img {
+  width: 45px;
+  height: 45px;
+  filter: brightness(1.75);
+}
+.temperatures,
+.other {
+  width: 50%;
+  height: auto;
+  display: flex;
+  margin: 70px 0 -20px 35px;
+}
+.first-column {
+  display: flex;
+  flex-direction: column;
+}
+.second-column {
+  display: flex;
+  flex-direction: column;
+}
+.flag {
+  margin: -10px 0 0 20px;
+  font-size: 2em;
+}
+.temperatures .first-column,
+h3 {
+  margin: 0 15px 5px 0;
+  color: var(--select);
+}
+.temperatures .second-column,
+.weather-details {
+  font-size: 1rem;
+  margin: 3px 15px 5px 0;
+  color: var(--detail-text);
+}
+.other .first-column,
+h3 {
+  margin: 0 15px 5px 0;
+  color: var(--select);
+}
+.other .second-column,
+.weather-details {
+  font-size: 1rem;
+  margin: 3px 15px 5px 0;
+  padding-left: 10px;
+  color: var(--detail-text);
+}
+.suns {
+  margin: 60px 0 0 20px;
+  display: flex;
+}
+.sun-details {
+  font-size: 1rem;
+  margin: 8px 15px 5px 0;
+  padding-left: 10px;
+  color: var(--detail-text);
+}
+.sunrise {
+  width: 50px;
+  height: 50px;
+  color: var(--sunrise);
+}
+.sunset {
+  width: 50px;
+  height: 50px;
+  color: var(--sunset);
+}
